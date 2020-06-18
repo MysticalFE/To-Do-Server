@@ -1,0 +1,34 @@
+{
+  "name": "to-do-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MysticalFE/To-Do-Server.git"
+  },
+  "keywords": [],
+  "author": "贾祥凯",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MysticalFE/To-Do-Server/issues"
+  },
+  "homepage": "https://github.com/MysticalFE/To-Do-Server#readme",
+  "dependencies": {
+    "koa": "^2.12.1",
+    "koa-body": "^4.2.0",
+    "koa-router": "^9.0.1",
+    "mysql": "^2.18.1",
+    "typescript": "^3.9.5"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.11.3",
+    "@types/koa-router": "^7.4.1",
+    "@types/node": "^14.0.13",
+    "@types/mysql": "^2.15.13"
+  }
+}
