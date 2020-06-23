@@ -20,16 +20,18 @@
   },
   "homepage": "https://github.com/MysticalFE/To-Do-Server#readme",
   "dependencies": {
+    "@koa/router": "^9.0.1",
     "koa": "^2.12.1",
     "koa-body": "^4.2.0",
-    "koa-router": "^9.0.1",
     "mysql": "^2.18.1"
   },
   "devDependencies": {
     "@types/koa": "^2.11.3",
-    "@types/koa-router": "^7.4.1",
+    "@types/koa-logger": "^3.1.1",
+    "@types/koa__router": "^8.0.2",
     "@types/mysql": "^2.15.13",
     "@types/node": "^14.0.13",
+    "koa-logger": "^3.2.1",
     "typescript": "^3.9.5"
   }
 }

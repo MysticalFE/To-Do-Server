@@ -1,20 +1,23 @@
 {
-  "extends": "./tsconfig.paths.json",
   "compilerOptions": {
-    "target": "ES2017",
+    "target": "es6",
     "allowJs": true,
     "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
+    // "esModuleInterop": true,
+    // "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "esnext",
+    "module": "commonjs",
     "moduleResolution": "node",
     "resolveJsonModule": true,
+    "removeComments": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "noImplicitAny": true,
-    "isolatedModules": true,
-    "noEmit": true
+    "noEmit": false,
+    "sourceMap": false,
+    "outDir": "./dist"
   },
-  "include": ["*"],
+  "include": ["*", "src/**/*"],
   "exclude": ["node_modules"]
 }
