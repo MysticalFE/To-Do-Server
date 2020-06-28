@@ -6,3 +6,7 @@ export interface ListItem {
   created_time?: number;
   updated_time?: number;
 }
+
+export interface deleteItem {
+  id: number;
+}

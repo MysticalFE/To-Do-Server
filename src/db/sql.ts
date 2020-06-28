@@ -1,5 +1,5 @@
 import config from "../../config";
-import { ListItem } from "../typings";
+import { ListItem, deleteItem } from "../typings";
 import * as mysql from "mysql";
 
 const { host, user, password, database } = config.database;
@@ -58,6 +58,7 @@ export const insertData = (table: string, values: ListItem) => {
  * @param values
  */
 export const updateData = (table: string, values: ListItem) => {
+  console.log(values);
   const sql = "update ?? set ? where id = ?";
   return query(sql, [table, values, values.id]);
 };
@@ -67,7 +68,7 @@ export const updateData = (table: string, values: ListItem) => {
  * @param table
  * @param id 数据id
  */
-export const deleteData = (table: string, id: number) => {
-  const sql = "delete from ?? where id= ?";
-  return query(sql, [table, id]);
+export const deleteData = (table: string, values: deleteItem) => {
+  const sql = "delete from ?? where id = ?";
+  return query(sql, [table, values.id]);
 };
