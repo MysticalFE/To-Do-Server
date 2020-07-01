@@ -44,7 +44,9 @@ export const selectData = (table: string) => {
  */
 export const insertData = (table: string, values: ListItem) => {
   const sql = "INSERT INTO ?? set ?";
+  if (typeof values === "string") values = JSON.parse(values);
   values = Object.assign({}, values, {
+    completed: false,
     user: "default",
     created_time: Date.now(),
     updated_time: Date.now(),
@@ -58,7 +60,6 @@ export const insertData = (table: string, values: ListItem) => {
  * @param values
  */
 export const updateData = (table: string, values: ListItem) => {
-  console.log(values);
   const sql = "update ?? set ? where id = ?";
   return query(sql, [table, values, values.id]);
 };

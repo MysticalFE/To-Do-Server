@@ -9,7 +9,7 @@ export default class toDoController {
     ctx.body = {
       success: true,
       code: 1,
-      message: "",
+      message: "查询成功",
       data,
     };
   }
@@ -19,7 +19,7 @@ export default class toDoController {
     ctx.body = {
       success: true,
       code: 1,
-      message: "",
+      message: "添加成功",
     };
   }
   static async update(ctx: RouterContext) {
@@ -28,7 +28,7 @@ export default class toDoController {
     ctx.body = {
       success: true,
       code: 1,
-      message: "",
+      message: "更新成功",
     };
   }
   static async delete(ctx: RouterContext) {
@@ -37,7 +37,7 @@ export default class toDoController {
     ctx.body = {
       success: true,
       code: 1,
-      message: "",
+      message: "删除成功",
     };
   }
 }

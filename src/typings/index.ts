@@ -1,6 +1,6 @@
 export interface ListItem {
   value: string;
-  completed: boolean;
+  completed?: boolean;
   id?: number;
   user?: string;
   created_time?: number;
