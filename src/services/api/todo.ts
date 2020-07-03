@@ -1,4 +1,10 @@
-import { selectData, insertData, updateData, deleteData } from "../../db";
+import {
+  selectData,
+  insertData,
+  updateData,
+  deleteData,
+  queryData,
+} from "../../db";
 import { ListItem, deleteItem } from "../../typings";
 
 export default class toDoService {
@@ -13,5 +19,8 @@ export default class toDoService {
   }
   static async deleteToDo(params: deleteItem) {
     return await deleteData("list", params);
+  }
+  static async query(params: ListItem) {
+    return await queryData("list", "value", params);
   }
 }

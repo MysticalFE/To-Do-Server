@@ -15,19 +15,19 @@ const pool = mysql.createPool({
  * @param sql sql语句
  * @param values 增删改查的内容
  */
-export const query = (sql: string, values: any[]): Promise<void> => {
+export const query = (sql: string, values: any): Promise<void> => {
   return new Promise((resolve, reject) => {
     pool.getConnection((err, connection) => {
       if (err) reject(err);
-      connection.query(sql, values, (err, results) => {
+      const connectionQuery = connection.query(sql, values, (err, results) => {
         if (err) reject(err);
         resolve(results);
         connection.release();
       });
+      console.log(connectionQuery.sql);
     });
   });
 };
-
 /**
  * 获取数据
  * @param table 数据库表
@@ -35,6 +35,11 @@ export const query = (sql: string, values: any[]): Promise<void> => {
 export const selectData = (table: string) => {
   const sql = "select * from ??";
   return query(sql, [table]);
+};
+
+export const queryData = (table: string, field: string, values: ListItem) => {
+  const sql = "select * from ?? where ?? like ?";
+  return query(sql, [table, field, `%${values.value}%`]);
 };
 
 /**

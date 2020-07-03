@@ -1,6 +1,6 @@
 import { RouterContext } from "@koa/router";
 import toDoService from "../../services/api/todo";
-const { select, insert, update, deleteToDo } = toDoService;
+const { select, insert, update, deleteToDo, query } = toDoService;
 
 export default class toDoController {
   static async select(ctx: RouterContext) {
@@ -38,6 +38,17 @@ export default class toDoController {
       success: true,
       code: 1,
       message: "删除成功",
+    };
+  }
+
+  static async query(ctx: RouterContext) {
+    const data = await query(ctx.request.body);
+    ctx.status = 200;
+    ctx.body = {
+      success: true,
+      code: 1,
+      message: "搜索成功",
+      data,
     };
   }
 }

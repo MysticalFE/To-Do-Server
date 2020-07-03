@@ -5,6 +5,8 @@ const router = new Router();
 
 router.get("/todo", toDoController.select);
 
+router.post("/todo/query", toDoController.query);
+
 router.post("/todo", toDoController.insert);
 
 router.put("/todo", toDoController.update);

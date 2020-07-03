@@ -1,1 +1,7 @@
-export { selectData, updateData, deleteData, insertData } from "./sql";
+export {
+  selectData,
+  updateData,
+  deleteData,
+  insertData,
+  queryData,
+} from "./sql";
