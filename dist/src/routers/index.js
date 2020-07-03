@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const Router = require("@koa/router");
+const todo_1 = require("../controllers/api/todo");
+const router = new Router();
+router.get("/todo", todo_1.default.select);
+router.post("/todo/query", todo_1.default.query);
+router.post("/todo", todo_1.default.insert);
+router.put("/todo", todo_1.default.update);
+router.delete("/todo", todo_1.default.delete);
+exports.default = router;
